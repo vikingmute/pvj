@@ -43,4 +43,22 @@ heat.james
 
 //获取object长度 用es5的方法
 Object.keys(heat).length
+
+//add a item
+heat.ray = 34;
+//{'james':28, 'wade':30, 'bosh':29, 'ray':34}
+
+//delete a item
+delete heat.ray
+//{'james':28, 'wade':30, 'bosh':29}
+
+//javascript没有clear方法偶 我们还是这样搞一搞...
+heat = {};
+
+//伟大的javascript木有update方法 但是我们有第三方库
+var $ = require('jquery');
+var _ = require('underscore');
+_.extend(heat, {'james':28, 'wade':30, 'bosh':29});
+_.extend(heat, {'james':24, 'ray':34});
+//{'james':24, 'wade':30, 'bosh':29, 'ray':34}
 ```
