@@ -14,6 +14,12 @@ c = conn.cursor()
 c.execute('create table user (id varchar(20) primary key, name varchar(20))')
 #insert a record
 c.execute('insert into user (id, name) values (\'1\', \'Michael\')')
+#我们可以已参数的形式传入值 注意第二个参数是tuple类型
+c.execute('insert into user (id, name) values (?, ?)', (2, 'James'))
+#还可以一次插入多个值
+data = [(3, 'Teo'), (4, 'Yepes'), (5, 'Zapata')]
+c.executemany('insert into user (id, name) values (?, ?)', data)
+
 #affect row
 c.rowcount
 #close cursor and conn
@@ -29,6 +35,7 @@ with sqlite3.connect(db_filename) as conn:
         schema = f.read()
     #execute a script file
     conn.executescript(schema)
+```
 
 我们插入了数据 然后讲一下获取数据
 
@@ -41,6 +48,5 @@ with sqlite3.connect(db_filename) as conn:
     values2 = c.fetchmany(5)
     #可以获得不同长度的记录
 
-    #执行的时候插入参数
 
 ```
