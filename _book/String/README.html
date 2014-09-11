@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>List/Array | pvj(Python vs Javascript)</title>
+        <title>String | pvj(Python vs Javascript)</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,11 +13,11 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../List/loop.html" />
         
+        <link rel="prev" href="../index.html" />
         
 
-        <meta property="og:title" content="List/Array | pvj(Python vs Javascript)">
+        <meta property="og:title" content="String | pvj(Python vs Javascript)">
         <meta property="og:site_name" content="pvj(Python vs Javascript)">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -40,7 +40,7 @@
 
 
         
-    <div class="book" data-github="vikingmute/pvj" data-level="2" data-basepath=".." data-revision="1410424254955">
+    <div class="book" data-github="vikingmute/pvj" data-level="1" data-basepath=".." data-revision="1410424254955">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -118,7 +118,7 @@
 
         
         <li>
-            <a href="https://github.com/vikingmute/pvj/edit/master/List/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/vikingmute/pvj/edit/master/String/README.md" target="blank">Edit and Contribute</a>
         </li>
         
 
@@ -261,7 +261,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 18.181818181818183%;min-width: 9.090909090909092%;"></div>
+        <div class="inner" style="width: 9.090909090909092%;min-width: 0%;"></div>
     </div>
     <div class="chapters">
     
@@ -269,7 +269,7 @@
     
         <a href="../String/README.html" title="String" class="chapter done new-chapter" data-progress="1" style="left: 9.090909090909092%;"></a>
     
-        <a href="../List/README.html" title="List/Array" class="chapter done new-chapter" data-progress="2" style="left: 18.181818181818183%;"></a>
+        <a href="../List/README.html" title="List/Array" class="chapter  new-chapter" data-progress="2" style="left: 18.181818181818183%;"></a>
     
         <a href="../List/loop.html" title="Loop" class="chapter  " data-progress="2.1" style="left: 27.272727272727273%;"></a>
     
@@ -294,90 +294,48 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_4">
+                    <section class="normal" id="section-gitbook_8">
                     
-                        <h3 id="-python-list-js-array-">在python中被叫做List，在js中被叫做Array 一个玩意儿</h3>
-<p>新建一个数组</p>
-<pre><code class="lang-python">players = [<span class="hljs-string">'James'</span>, <span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Bosh'</span>]
+                        <h3 id="-">字符串</h3>
+<p>不逼逼了 直接上代码 喜欢python的字符串切片功能啊</p>
+<p>来一个字符串</p>
+<pre><code class="lang-python">viking = <span class="hljs-string">'tattoo on my shoulder'</span>
+<span class="hljs-comment">#各种切片玩</span>
+viking[<span class="hljs-number">0</span>]
+<span class="hljs-comment">#'t'</span>
+viking[<span class="hljs-number">0</span>:<span class="hljs-number">6</span>]
+<span class="hljs-comment">#'tattoo'</span>
+viking[-<span class="hljs-number">8</span>:]
+<span class="hljs-comment">#可以省略偶 很好用 'shoulder'</span>
 </code></pre>
-<p>数组长度</p>
-<pre><code class="lang-python">len(players)
-<span class="hljs-comment">#输出3</span>
+<p>当你要格式化一个字符串的时候 可以这么搞一下 </p>
+<pre><code class="lang-python"><span class="hljs-string">'Hey, name is %s, score is %d'</span> % (<span class="hljs-string">'viking'</span>, <span class="hljs-number">60</span>)
+<span class="hljs-comment"># hey, name is viking, score is 60</span>
+<span class="hljs-string">'your height is %.2f'</span> % <span class="hljs-number">160.22223456</span>
+<span class="hljs-comment"># your height is 160.22</span>
+
+<span class="hljs-comment">#常用的就有 %d(digital), %f(float), %s(string)</span>
 </code></pre>
-<p>访问数组元素 可以使用负数</p>
-<pre><code class="lang-python"><span class="hljs-keyword">print</span> players[<span class="hljs-number">1</span>]
-<span class="hljs-comment">#输出 wade</span>
-<span class="hljs-keyword">print</span> players[-<span class="hljs-number">1</span>]
-<span class="hljs-comment">#输出 Bosh</span>
+<p>关于字符串 你必须读的一个链接 
+<a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001386819196283586a37629844456ca7e5a7faa9b94ee8000" target="_blank">廖雪峰的python教程</a></p>
+<p>上面的用js写一遍</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> viking = <span class="hljs-string">'tattoo on my shoulder'</span>;
+<span class="hljs-comment">//切片就比较蛋疼了</span>
+viking.substring(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
+viking.substring(<span class="hljs-number">0</span>, <span class="hljs-number">6</span>);
+<span class="hljs-comment">//还有一个方法substr 第二个参数是要切字母的个数</span>
+viking.substr(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>);
+
+<span class="hljs-comment">//没有负数索引</span>
+
+<span class="hljs-comment">//格式化字符串没有原生的方法 但是我们可以在node中找到类似的方法format</span>
+<span class="hljs-keyword">var</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">'util'</span>);
+util.format(<span class="hljs-string">'name is %s, score is %d'</span>, <span class="hljs-string">'viking'</span>, <span class="hljs-number">60</span>);
+
+<span class="hljs-comment">//没有float类型但是 多了一个json类型</span>
+util.format(<span class="hljs-string">'%j'</span>, {name: <span class="hljs-string">'viking'</span>});
+<span class="hljs-comment">//直接输出{name: 'viking'}</span>
 </code></pre>
-<p>增删改</p>
-<pre><code class="lang-python"><span class="hljs-comment">#末尾增加一个</span>
-players.append(<span class="hljs-string">'Ray Allen'</span>)
-<span class="hljs-comment">#['James', 'Wade', 'Bosh', 'Ray Allen']</span>
-
-<span class="hljs-comment">#指定位置增加一个</span>
-players.insert(<span class="hljs-number">1</span>, <span class="hljs-string">'Jones'</span>)
-<span class="hljs-comment">#['James', 'Jonens', Wade', 'Bosh', 'Ray Allen']</span>
-
-
-
-<span class="hljs-comment">#删除一个元素</span>
-players.pop()
-<span class="hljs-comment">#['James', 'Jonens', Wade', 'Bosh']</span>
-players.pop(<span class="hljs-number">2</span>)
-<span class="hljs-comment">#['James', 'Jonens', 'Bosh']</span>
-
-<span class="hljs-comment">#修改一个元素</span>
-players[<span class="hljs-number">2</span>] = <span class="hljs-string">'Chris Bosh'</span>
-<span class="hljs-comment">#['James', 'Jonens', 'Chris Bosh']</span>
-
-<span class="hljs-comment">#末尾增加另外一个列表</span>
-players.extend([<span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Cole'</span>])
-<span class="hljs-comment">#['James', 'Jonens', 'Chris Bosh', 'Wade', 'Cole']</span>
-</code></pre>
-<p>判断一个元素是不是List对象</p>
-<pre><code class="lang-python">isinstance(players, list)
-<span class="hljs-comment">#输出True</span>
-</code></pre>
-<p>用js把上面的方法都写一遍...有的地方确实蛋疼啊</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> players = [<span class="hljs-string">'James'</span>, <span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Bosh'</span>];
-console.log(players.length);
-console.log(players[<span class="hljs-number">1</span>]);
-<span class="hljs-comment">//不支持负数index</span>
-
-players.push(<span class="hljs-string">'Ray Allen'</span>);
-<span class="hljs-comment">//['James', 'Wade', 'Bosh', 'Ray Allen'];</span>
-
-players.splice(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"Jones"</span>);
-<span class="hljs-comment">//['James', 'Jonens', Wade', 'Bosh', 'Ray Allen'];</span>
-<span class="hljs-comment">//神奇的方法啊，牛逼的splice，当然这是反话</span>
-
-players.pop();
-<span class="hljs-comment">//['James', 'Jonens', Wade', 'Bosh']</span>
-
-players.splice(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
-<span class="hljs-comment">//['James', 'Jonens', 'Bosh']</span>
-<span class="hljs-comment">//splice又来了，真是厉害..</span>
-
-players[<span class="hljs-number">2</span>] = <span class="hljs-string">'Chris Bosh'</span>;
-<span class="hljs-comment">//['James', 'Jonens', 'Chris Bosh']</span>
-
-players = players.concat([<span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Cole'</span>]);
-<span class="hljs-comment">//['James', 'Jonens', 'Chris Bosh', 'Wade', 'Cole']</span>
-
-<span class="hljs-comment">//前方高能 判断一个变量是不是数组 要用这么多奇葩的方法 呵呵</span>
-players <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>;
-<span class="hljs-comment">//True</span>
-
-<span class="hljs-comment">//tricky的傻逼方法</span>
-<span class="hljs-built_in">Object</span>.prototype.toString.call(players) == <span class="hljs-string">'[object Array]'</span>;
-<span class="hljs-comment">//true</span>
-
-<span class="hljs-comment">//es5标准方法 当然还要浏览器大神的支持</span>
-<span class="hljs-built_in">Array</span>.isArray(players);
-<span class="hljs-comment">//true</span>
-</code></pre>
-<p>好吧 我爱python 下节讲讲数组的循环</p>
 
                     
                     </section>
@@ -387,8 +345,8 @@ players <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in"
         </div>
 
         
+        <a href="../index.html" class="navigation navigation-prev navigation-unique"><i class="fa fa-angle-left"></i></a>
         
-        <a href="../List/loop.html" class="navigation navigation-next navigation-unique"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

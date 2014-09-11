@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>List/Array | pvj(Python vs Javascript)</title>
+        <title>Build-in Module | pvj(Python vs Javascript)</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,11 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../List/loop.html" />
+        <link rel="next" href="../Util/json.html" />
         
+        
+        <link rel="prev" href="../Database/Sqllite.html" />
         
 
-        <meta property="og:title" content="List/Array | pvj(Python vs Javascript)">
+        <meta property="og:title" content="Build-in Module | pvj(Python vs Javascript)">
         <meta property="og:site_name" content="pvj(Python vs Javascript)">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -40,7 +42,7 @@
 
 
         
-    <div class="book" data-github="vikingmute/pvj" data-level="2" data-basepath=".." data-revision="1410424254955">
+    <div class="book" data-github="vikingmute/pvj" data-level="6" data-basepath=".." data-revision="1410424254955">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -118,7 +120,7 @@
 
         
         <li>
-            <a href="https://github.com/vikingmute/pvj/edit/master/List/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/vikingmute/pvj/edit/master/Util/README.md" target="blank">Edit and Contribute</a>
         </li>
         
 
@@ -261,7 +263,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 18.181818181818183%;min-width: 9.090909090909092%;"></div>
+        <div class="inner" style="width: 81.81818181818181%;min-width: 72.72727272727273%;"></div>
     </div>
     <div class="chapters">
     
@@ -271,19 +273,19 @@
     
         <a href="../List/README.html" title="List/Array" class="chapter done new-chapter" data-progress="2" style="left: 18.181818181818183%;"></a>
     
-        <a href="../List/loop.html" title="Loop" class="chapter  " data-progress="2.1" style="left: 27.272727272727273%;"></a>
+        <a href="../List/loop.html" title="Loop" class="chapter done " data-progress="2.1" style="left: 27.272727272727273%;"></a>
     
-        <a href="../List/comp.html" title="List Comprehensions" class="chapter  " data-progress="2.2" style="left: 36.36363636363637%;"></a>
+        <a href="../List/comp.html" title="List Comprehensions" class="chapter done " data-progress="2.2" style="left: 36.36363636363637%;"></a>
     
-        <a href="../Dict/README.html" title="Dict/Object" class="chapter  new-chapter" data-progress="3" style="left: 45.45454545454545%;"></a>
+        <a href="../Dict/README.html" title="Dict/Object" class="chapter done new-chapter" data-progress="3" style="left: 45.45454545454545%;"></a>
     
-        <a href="../Dict/loop.html" title="Loop" class="chapter  " data-progress="3.1" style="left: 54.54545454545455%;"></a>
+        <a href="../Dict/loop.html" title="Loop" class="chapter done " data-progress="3.1" style="left: 54.54545454545455%;"></a>
     
-        <a href="../OOP/README.html" title="OOP(Object Oriented Programming)" class="chapter  new-chapter" data-progress="4" style="left: 63.63636363636363%;"></a>
+        <a href="../OOP/README.html" title="OOP(Object Oriented Programming)" class="chapter done new-chapter" data-progress="4" style="left: 63.63636363636363%;"></a>
     
-        <a href="../Database/Sqllite.html" title="Database" class="chapter  new-chapter" data-progress="5" style="left: 72.72727272727273%;"></a>
+        <a href="../Database/Sqllite.html" title="Database" class="chapter done new-chapter" data-progress="5" style="left: 72.72727272727273%;"></a>
     
-        <a href="../Util/README.html" title="Build-in Module" class="chapter  new-chapter" data-progress="6" style="left: 81.81818181818181%;"></a>
+        <a href="../Util/README.html" title="Build-in Module" class="chapter done new-chapter" data-progress="6" style="left: 81.81818181818181%;"></a>
     
         <a href="../Util/json.html" title="JSON" class="chapter  " data-progress="6.1" style="left: 90.9090909090909%;"></a>
     
@@ -294,90 +296,62 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_4">
+                    <section class="normal" id="section-gitbook_9">
                     
-                        <h3 id="-python-list-js-array-">在python中被叫做List，在js中被叫做Array 一个玩意儿</h3>
-<p>新建一个数组</p>
-<pre><code class="lang-python">players = [<span class="hljs-string">'James'</span>, <span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Bosh'</span>]
+                        <h3 id="-">常用内置模块</h3>
+<p>Python有很多非常还用的内置模块 当然还有很多别人写好的很叼的第三方库 这里我们介绍一些好用的内置模块</p>
+<h4 id="urllib2">Urllib2</h4>
+<p>抓取网页并且分析 是我们经常做的事情了 用这个模块可以完成这一系列的操作</p>
+<pre><code class="lang-python"><span class="hljs-comment">#一个很简单的抓取列子</span>
+<span class="hljs-keyword">import</span> urllib2
+response = urllib2.urlopen(<span class="hljs-string">'http://www.baidu.com'</span>)
+html = response.read()
+<span class="hljs-comment">#也可以传入一个Request对象</span>
+req = urllib2.Request(<span class="hljs-string">'http://www.baidu.com'</span>)
+response = urllib2.urlopen(req)
+html = response.read()
+
+<span class="hljs-comment">#复杂一些 我们添加一些data和headers</span>
+<span class="hljs-keyword">import</span> urllib
+
+url = <span class="hljs-string">"http://viking.com/commit-info"</span>
+userAgent = <span class="hljs-string">"Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)"</span>
+values = {
+    <span class="hljs-string">'name'</span>: <span class="hljs-string">'viking'</span>,
+    <span class="hljs-string">'sex'</span>: <span class="hljs-string">'male'</span>
+}
+headers = {
+    <span class="hljs-string">'User-Agent'</span>: userAgent
+}
+data = urllib.urlencode(values)
+req = urllib2.Request(url, data, headers)
+response = urllib2.urlopen(req)
+html = response.read()
 </code></pre>
-<p>数组长度</p>
-<pre><code class="lang-python">len(players)
-<span class="hljs-comment">#输出3</span>
+<p>在nodejs中 我们也可以用Request对象来实现相同的方法 请注意异步变成的不同哈</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'request'</span>);
+<span class="hljs-keyword">var</span> querystring = <span class="hljs-built_in">require</span>(<span class="hljs-string">'querystring'</span>)
+<span class="hljs-keyword">var</span> url = <span class="hljs-string">"http://viking.com/commit-info"</span>;
+<span class="hljs-keyword">var</span> userAgent = <span class="hljs-string">"Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)"</span>;
+<span class="hljs-keyword">var</span> values = {
+    <span class="hljs-string">'name'</span>:<span class="hljs-string">'viking'</span>,
+    <span class="hljs-string">'sex'</span>: <span class="hljs-string">'male'</span>
+};
+<span class="hljs-keyword">var</span> headers = {
+    <span class="hljs-string">'User-Agent'</span>:userAgent
+};
+<span class="hljs-keyword">var</span> data = querystring.stringify(values);
+<span class="hljs-keyword">var</span> options = {
+    uri: url,
+    qs: data,
+    headers: headers,
+    method: <span class="hljs-string">'POST'</span>
+};
+
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error, response, body)</span> {</span>
+    console.log(body);
+});
 </code></pre>
-<p>访问数组元素 可以使用负数</p>
-<pre><code class="lang-python"><span class="hljs-keyword">print</span> players[<span class="hljs-number">1</span>]
-<span class="hljs-comment">#输出 wade</span>
-<span class="hljs-keyword">print</span> players[-<span class="hljs-number">1</span>]
-<span class="hljs-comment">#输出 Bosh</span>
-</code></pre>
-<p>增删改</p>
-<pre><code class="lang-python"><span class="hljs-comment">#末尾增加一个</span>
-players.append(<span class="hljs-string">'Ray Allen'</span>)
-<span class="hljs-comment">#['James', 'Wade', 'Bosh', 'Ray Allen']</span>
-
-<span class="hljs-comment">#指定位置增加一个</span>
-players.insert(<span class="hljs-number">1</span>, <span class="hljs-string">'Jones'</span>)
-<span class="hljs-comment">#['James', 'Jonens', Wade', 'Bosh', 'Ray Allen']</span>
-
-
-
-<span class="hljs-comment">#删除一个元素</span>
-players.pop()
-<span class="hljs-comment">#['James', 'Jonens', Wade', 'Bosh']</span>
-players.pop(<span class="hljs-number">2</span>)
-<span class="hljs-comment">#['James', 'Jonens', 'Bosh']</span>
-
-<span class="hljs-comment">#修改一个元素</span>
-players[<span class="hljs-number">2</span>] = <span class="hljs-string">'Chris Bosh'</span>
-<span class="hljs-comment">#['James', 'Jonens', 'Chris Bosh']</span>
-
-<span class="hljs-comment">#末尾增加另外一个列表</span>
-players.extend([<span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Cole'</span>])
-<span class="hljs-comment">#['James', 'Jonens', 'Chris Bosh', 'Wade', 'Cole']</span>
-</code></pre>
-<p>判断一个元素是不是List对象</p>
-<pre><code class="lang-python">isinstance(players, list)
-<span class="hljs-comment">#输出True</span>
-</code></pre>
-<p>用js把上面的方法都写一遍...有的地方确实蛋疼啊</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> players = [<span class="hljs-string">'James'</span>, <span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Bosh'</span>];
-console.log(players.length);
-console.log(players[<span class="hljs-number">1</span>]);
-<span class="hljs-comment">//不支持负数index</span>
-
-players.push(<span class="hljs-string">'Ray Allen'</span>);
-<span class="hljs-comment">//['James', 'Wade', 'Bosh', 'Ray Allen'];</span>
-
-players.splice(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"Jones"</span>);
-<span class="hljs-comment">//['James', 'Jonens', Wade', 'Bosh', 'Ray Allen'];</span>
-<span class="hljs-comment">//神奇的方法啊，牛逼的splice，当然这是反话</span>
-
-players.pop();
-<span class="hljs-comment">//['James', 'Jonens', Wade', 'Bosh']</span>
-
-players.splice(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
-<span class="hljs-comment">//['James', 'Jonens', 'Bosh']</span>
-<span class="hljs-comment">//splice又来了，真是厉害..</span>
-
-players[<span class="hljs-number">2</span>] = <span class="hljs-string">'Chris Bosh'</span>;
-<span class="hljs-comment">//['James', 'Jonens', 'Chris Bosh']</span>
-
-players = players.concat([<span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Cole'</span>]);
-<span class="hljs-comment">//['James', 'Jonens', 'Chris Bosh', 'Wade', 'Cole']</span>
-
-<span class="hljs-comment">//前方高能 判断一个变量是不是数组 要用这么多奇葩的方法 呵呵</span>
-players <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>;
-<span class="hljs-comment">//True</span>
-
-<span class="hljs-comment">//tricky的傻逼方法</span>
-<span class="hljs-built_in">Object</span>.prototype.toString.call(players) == <span class="hljs-string">'[object Array]'</span>;
-<span class="hljs-comment">//true</span>
-
-<span class="hljs-comment">//es5标准方法 当然还要浏览器大神的支持</span>
-<span class="hljs-built_in">Array</span>.isArray(players);
-<span class="hljs-comment">//true</span>
-</code></pre>
-<p>好吧 我爱python 下节讲讲数组的循环</p>
 
                     
                     </section>
@@ -387,8 +361,10 @@ players <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in"
         </div>
 
         
+        <a href="../Database/Sqllite.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
         
-        <a href="../List/loop.html" class="navigation navigation-next navigation-unique"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="../Util/json.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -18,3 +18,14 @@ for index in range(0, len(players)):
 for index, name in enumerate(players):
     print str(index) + " : " + name
 ```
+
+javascript循环数组的方法 经典的方法
+
+```javascript
+var players = ['james', 'gurin', 'teo'];
+
+for (var i = 0; i < players.length; i++) {
+    console.log(i + ':' + players[i]);    
+}
+
+```

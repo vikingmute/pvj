@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>List/Array | pvj(Python vs Javascript)</title>
+        <title>Datetime | pvj(Python vs Javascript)</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,11 +13,11 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../List/loop.html" />
         
+        <link rel="prev" href="../Util/json.html" />
         
 
-        <meta property="og:title" content="List/Array | pvj(Python vs Javascript)">
+        <meta property="og:title" content="Datetime | pvj(Python vs Javascript)">
         <meta property="og:site_name" content="pvj(Python vs Javascript)">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -40,7 +40,7 @@
 
 
         
-    <div class="book" data-github="vikingmute/pvj" data-level="2" data-basepath=".." data-revision="1410424254955">
+    <div class="book" data-github="vikingmute/pvj" data-level="6.2" data-basepath=".." data-revision="1410424254955">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -118,7 +118,7 @@
 
         
         <li>
-            <a href="https://github.com/vikingmute/pvj/edit/master/List/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/vikingmute/pvj/edit/master/Util/date.md" target="blank">Edit and Contribute</a>
         </li>
         
 
@@ -261,7 +261,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 18.181818181818183%;min-width: 9.090909090909092%;"></div>
+        <div class="inner" style="width: 100%;min-width: 90.9090909090909%;"></div>
     </div>
     <div class="chapters">
     
@@ -271,113 +271,66 @@
     
         <a href="../List/README.html" title="List/Array" class="chapter done new-chapter" data-progress="2" style="left: 18.181818181818183%;"></a>
     
-        <a href="../List/loop.html" title="Loop" class="chapter  " data-progress="2.1" style="left: 27.272727272727273%;"></a>
+        <a href="../List/loop.html" title="Loop" class="chapter done " data-progress="2.1" style="left: 27.272727272727273%;"></a>
     
-        <a href="../List/comp.html" title="List Comprehensions" class="chapter  " data-progress="2.2" style="left: 36.36363636363637%;"></a>
+        <a href="../List/comp.html" title="List Comprehensions" class="chapter done " data-progress="2.2" style="left: 36.36363636363637%;"></a>
     
-        <a href="../Dict/README.html" title="Dict/Object" class="chapter  new-chapter" data-progress="3" style="left: 45.45454545454545%;"></a>
+        <a href="../Dict/README.html" title="Dict/Object" class="chapter done new-chapter" data-progress="3" style="left: 45.45454545454545%;"></a>
     
-        <a href="../Dict/loop.html" title="Loop" class="chapter  " data-progress="3.1" style="left: 54.54545454545455%;"></a>
+        <a href="../Dict/loop.html" title="Loop" class="chapter done " data-progress="3.1" style="left: 54.54545454545455%;"></a>
     
-        <a href="../OOP/README.html" title="OOP(Object Oriented Programming)" class="chapter  new-chapter" data-progress="4" style="left: 63.63636363636363%;"></a>
+        <a href="../OOP/README.html" title="OOP(Object Oriented Programming)" class="chapter done new-chapter" data-progress="4" style="left: 63.63636363636363%;"></a>
     
-        <a href="../Database/Sqllite.html" title="Database" class="chapter  new-chapter" data-progress="5" style="left: 72.72727272727273%;"></a>
+        <a href="../Database/Sqllite.html" title="Database" class="chapter done new-chapter" data-progress="5" style="left: 72.72727272727273%;"></a>
     
-        <a href="../Util/README.html" title="Build-in Module" class="chapter  new-chapter" data-progress="6" style="left: 81.81818181818181%;"></a>
+        <a href="../Util/README.html" title="Build-in Module" class="chapter done new-chapter" data-progress="6" style="left: 81.81818181818181%;"></a>
     
-        <a href="../Util/json.html" title="JSON" class="chapter  " data-progress="6.1" style="left: 90.9090909090909%;"></a>
+        <a href="../Util/json.html" title="JSON" class="chapter done " data-progress="6.1" style="left: 90.9090909090909%;"></a>
     
-        <a href="../Util/date.html" title="Datetime" class="chapter  " data-progress="6.2" style="left: 100%;"></a>
+        <a href="../Util/date.html" title="Datetime" class="chapter done " data-progress="6.2" style="left: 100%;"></a>
     
     </div>
 </div>
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_4">
+                    <section class="normal" id="section-gitbook_10">
                     
-                        <h3 id="-python-list-js-array-">在python中被叫做List，在js中被叫做Array 一个玩意儿</h3>
-<p>新建一个数组</p>
-<pre><code class="lang-python">players = [<span class="hljs-string">'James'</span>, <span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Bosh'</span>]
+                        <h3 id="-">来说一说时间这个对象</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> datetime
+<span class="hljs-keyword">import</span> time
+<span class="hljs-comment">#using datetime module</span>
+today = datetime.datetime.now()
+<span class="hljs-keyword">print</span> today.hour
+<span class="hljs-keyword">print</span> today.minute
+<span class="hljs-keyword">print</span> today.year
+<span class="hljs-keyword">print</span> today.month
+<span class="hljs-keyword">print</span> today.day
+<span class="hljs-keyword">print</span> today.second
+<span class="hljs-comment">#output current dates in timestamp</span>
+<span class="hljs-comment">#有点烦人 太难记了</span>
+timestamp = int(time.time())
+<span class="hljs-comment">#convert back</span>
+today_two = datetime.date.fromtimestamp(timestamp)
+<span class="hljs-keyword">print</span> today_two.year
+
+<span class="hljs-comment"># using time strftime</span>
+<span class="hljs-keyword">print</span> time.strftime(<span class="hljs-string">'%d/%m/%Y %H:%M:%S'</span>)
+
+<span class="hljs-comment">#checking all the parameters and details here: </span>
+<span class="hljs-comment"># http://www.cyberciti.biz/faq/howto-get-current-date-time-in-python/</span>
 </code></pre>
-<p>数组长度</p>
-<pre><code class="lang-python">len(players)
-<span class="hljs-comment">#输出3</span>
+<p>太烦了 找了半天 我们看看js的吧...
+当然你可以用moment这个库...</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> today = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+today.getFullYear();
+<span class="hljs-comment">//之类之类这里不写了</span>
+<span class="hljs-keyword">var</span> timestamp = <span class="hljs-built_in">Math</span>.round(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()/<span class="hljs-number">1000</span>);
+<span class="hljs-comment">//注意这里是乘了1000的</span>
+<span class="hljs-keyword">var</span> today_2 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(timestamp * <span class="hljs-number">1000</span>);
+today2.getFullYear();
+moment.format(<span class="hljs-string">'dd/MM/YYYY HH:mm:ss'</span>);
 </code></pre>
-<p>访问数组元素 可以使用负数</p>
-<pre><code class="lang-python"><span class="hljs-keyword">print</span> players[<span class="hljs-number">1</span>]
-<span class="hljs-comment">#输出 wade</span>
-<span class="hljs-keyword">print</span> players[-<span class="hljs-number">1</span>]
-<span class="hljs-comment">#输出 Bosh</span>
-</code></pre>
-<p>增删改</p>
-<pre><code class="lang-python"><span class="hljs-comment">#末尾增加一个</span>
-players.append(<span class="hljs-string">'Ray Allen'</span>)
-<span class="hljs-comment">#['James', 'Wade', 'Bosh', 'Ray Allen']</span>
-
-<span class="hljs-comment">#指定位置增加一个</span>
-players.insert(<span class="hljs-number">1</span>, <span class="hljs-string">'Jones'</span>)
-<span class="hljs-comment">#['James', 'Jonens', Wade', 'Bosh', 'Ray Allen']</span>
-
-
-
-<span class="hljs-comment">#删除一个元素</span>
-players.pop()
-<span class="hljs-comment">#['James', 'Jonens', Wade', 'Bosh']</span>
-players.pop(<span class="hljs-number">2</span>)
-<span class="hljs-comment">#['James', 'Jonens', 'Bosh']</span>
-
-<span class="hljs-comment">#修改一个元素</span>
-players[<span class="hljs-number">2</span>] = <span class="hljs-string">'Chris Bosh'</span>
-<span class="hljs-comment">#['James', 'Jonens', 'Chris Bosh']</span>
-
-<span class="hljs-comment">#末尾增加另外一个列表</span>
-players.extend([<span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Cole'</span>])
-<span class="hljs-comment">#['James', 'Jonens', 'Chris Bosh', 'Wade', 'Cole']</span>
-</code></pre>
-<p>判断一个元素是不是List对象</p>
-<pre><code class="lang-python">isinstance(players, list)
-<span class="hljs-comment">#输出True</span>
-</code></pre>
-<p>用js把上面的方法都写一遍...有的地方确实蛋疼啊</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> players = [<span class="hljs-string">'James'</span>, <span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Bosh'</span>];
-console.log(players.length);
-console.log(players[<span class="hljs-number">1</span>]);
-<span class="hljs-comment">//不支持负数index</span>
-
-players.push(<span class="hljs-string">'Ray Allen'</span>);
-<span class="hljs-comment">//['James', 'Wade', 'Bosh', 'Ray Allen'];</span>
-
-players.splice(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"Jones"</span>);
-<span class="hljs-comment">//['James', 'Jonens', Wade', 'Bosh', 'Ray Allen'];</span>
-<span class="hljs-comment">//神奇的方法啊，牛逼的splice，当然这是反话</span>
-
-players.pop();
-<span class="hljs-comment">//['James', 'Jonens', Wade', 'Bosh']</span>
-
-players.splice(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
-<span class="hljs-comment">//['James', 'Jonens', 'Bosh']</span>
-<span class="hljs-comment">//splice又来了，真是厉害..</span>
-
-players[<span class="hljs-number">2</span>] = <span class="hljs-string">'Chris Bosh'</span>;
-<span class="hljs-comment">//['James', 'Jonens', 'Chris Bosh']</span>
-
-players = players.concat([<span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Cole'</span>]);
-<span class="hljs-comment">//['James', 'Jonens', 'Chris Bosh', 'Wade', 'Cole']</span>
-
-<span class="hljs-comment">//前方高能 判断一个变量是不是数组 要用这么多奇葩的方法 呵呵</span>
-players <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>;
-<span class="hljs-comment">//True</span>
-
-<span class="hljs-comment">//tricky的傻逼方法</span>
-<span class="hljs-built_in">Object</span>.prototype.toString.call(players) == <span class="hljs-string">'[object Array]'</span>;
-<span class="hljs-comment">//true</span>
-
-<span class="hljs-comment">//es5标准方法 当然还要浏览器大神的支持</span>
-<span class="hljs-built_in">Array</span>.isArray(players);
-<span class="hljs-comment">//true</span>
-</code></pre>
-<p>好吧 我爱python 下节讲讲数组的循环</p>
 
                     
                     </section>
@@ -387,8 +340,8 @@ players <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in"
         </div>
 
         
+        <a href="../Util/json.html" class="navigation navigation-prev navigation-unique"><i class="fa fa-angle-left"></i></a>
         
-        <a href="../List/loop.html" class="navigation navigation-next navigation-unique"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

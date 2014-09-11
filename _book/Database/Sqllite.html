@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>List/Array | pvj(Python vs Javascript)</title>
+        <title>Database | pvj(Python vs Javascript)</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,11 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../List/loop.html" />
+        <link rel="next" href="../Util/README.html" />
         
+        
+        <link rel="prev" href="../OOP/README.html" />
         
 
-        <meta property="og:title" content="List/Array | pvj(Python vs Javascript)">
+        <meta property="og:title" content="Database | pvj(Python vs Javascript)">
         <meta property="og:site_name" content="pvj(Python vs Javascript)">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -40,7 +42,7 @@
 
 
         
-    <div class="book" data-github="vikingmute/pvj" data-level="2" data-basepath=".." data-revision="1410424254955">
+    <div class="book" data-github="vikingmute/pvj" data-level="5" data-basepath=".." data-revision="1410424254955">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -118,7 +120,7 @@
 
         
         <li>
-            <a href="https://github.com/vikingmute/pvj/edit/master/List/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/vikingmute/pvj/edit/master/Database/Sqllite.md" target="blank">Edit and Contribute</a>
         </li>
         
 
@@ -261,7 +263,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 18.181818181818183%;min-width: 9.090909090909092%;"></div>
+        <div class="inner" style="width: 72.72727272727273%;min-width: 63.63636363636363%;"></div>
     </div>
     <div class="chapters">
     
@@ -271,17 +273,17 @@
     
         <a href="../List/README.html" title="List/Array" class="chapter done new-chapter" data-progress="2" style="left: 18.181818181818183%;"></a>
     
-        <a href="../List/loop.html" title="Loop" class="chapter  " data-progress="2.1" style="left: 27.272727272727273%;"></a>
+        <a href="../List/loop.html" title="Loop" class="chapter done " data-progress="2.1" style="left: 27.272727272727273%;"></a>
     
-        <a href="../List/comp.html" title="List Comprehensions" class="chapter  " data-progress="2.2" style="left: 36.36363636363637%;"></a>
+        <a href="../List/comp.html" title="List Comprehensions" class="chapter done " data-progress="2.2" style="left: 36.36363636363637%;"></a>
     
-        <a href="../Dict/README.html" title="Dict/Object" class="chapter  new-chapter" data-progress="3" style="left: 45.45454545454545%;"></a>
+        <a href="../Dict/README.html" title="Dict/Object" class="chapter done new-chapter" data-progress="3" style="left: 45.45454545454545%;"></a>
     
-        <a href="../Dict/loop.html" title="Loop" class="chapter  " data-progress="3.1" style="left: 54.54545454545455%;"></a>
+        <a href="../Dict/loop.html" title="Loop" class="chapter done " data-progress="3.1" style="left: 54.54545454545455%;"></a>
     
-        <a href="../OOP/README.html" title="OOP(Object Oriented Programming)" class="chapter  new-chapter" data-progress="4" style="left: 63.63636363636363%;"></a>
+        <a href="../OOP/README.html" title="OOP(Object Oriented Programming)" class="chapter done new-chapter" data-progress="4" style="left: 63.63636363636363%;"></a>
     
-        <a href="../Database/Sqllite.html" title="Database" class="chapter  new-chapter" data-progress="5" style="left: 72.72727272727273%;"></a>
+        <a href="../Database/Sqllite.html" title="Database" class="chapter done new-chapter" data-progress="5" style="left: 72.72727272727273%;"></a>
     
         <a href="../Util/README.html" title="Build-in Module" class="chapter  new-chapter" data-progress="6" style="left: 81.81818181818181%;"></a>
     
@@ -294,90 +296,47 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_4">
+                    <section class="normal" id="section-gitbook_7">
                     
-                        <h3 id="-python-list-js-array-">在python中被叫做List，在js中被叫做Array 一个玩意儿</h3>
-<p>新建一个数组</p>
-<pre><code class="lang-python">players = [<span class="hljs-string">'James'</span>, <span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Bosh'</span>]
+                        <h3 id="python-sqllite-">Python连接sqllite数据库</h3>
+<p>SQLite是一种嵌入式数据库，它的数据库就是一个文件。由于SQLite本身是C写的，而且体积很小，所以，经常被集成到各种应用程序中，甚至在iOS和Android的App中都可以集成。</p>
+<p>Python就内置了SQLite3，所以，在Python中使用SQLite，不需要安装任何东西，直接使用。</p>
+<p>下面直接上代码了</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> sqlite3
+conn = sqllite3.connect(<span class="hljs-string">'test.db'</span>)
+c = conn.cursor()
+<span class="hljs-comment">#create a table</span>
+c.execute(<span class="hljs-string">'create table user (id varchar(20) primary key, name varchar(20))'</span>)
+<span class="hljs-comment">#insert a record</span>
+c.execute(<span class="hljs-string">'insert into user (id, name) values (\'1\', \'Michael\')'</span>)
+<span class="hljs-comment">#我们可以已参数的形式传入值 注意第二个参数是tuple类型</span>
+c.execute(<span class="hljs-string">'insert into user (id, name) values (?, ?)'</span>, (<span class="hljs-number">2</span>, <span class="hljs-string">'James'</span>))
+<span class="hljs-comment">#还可以一次插入多个值</span>
+data = [(<span class="hljs-number">3</span>, <span class="hljs-string">'Teo'</span>), (<span class="hljs-number">4</span>, <span class="hljs-string">'Yepes'</span>), (<span class="hljs-number">5</span>, <span class="hljs-string">'Zapata'</span>)]
+c.executemany(<span class="hljs-string">'insert into user (id, name) values (?, ?)'</span>, data)
+
+<span class="hljs-comment">#affect row</span>
+c.rowcount
+<span class="hljs-comment">#close cursor and conn</span>
+c.close()
+conn.close()
 </code></pre>
-<p>数组长度</p>
-<pre><code class="lang-python">len(players)
-<span class="hljs-comment">#输出3</span>
+<p>你觉得一直要关闭连接太麻烦了 我们可以直接用with命令 看起来也方便很多 回调函数的快感</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> sqlite3.connect(db_filename) <span class="hljs-keyword">as</span> conn:
+    <span class="hljs-keyword">with</span> open(schema_filename, <span class="hljs-string">'rt'</span>) <span class="hljs-keyword">as</span> f:
+        schema = f.read()
+    <span class="hljs-comment">#execute a script file</span>
+    conn.executescript(schema)
 </code></pre>
-<p>访问数组元素 可以使用负数</p>
-<pre><code class="lang-python"><span class="hljs-keyword">print</span> players[<span class="hljs-number">1</span>]
-<span class="hljs-comment">#输出 wade</span>
-<span class="hljs-keyword">print</span> players[-<span class="hljs-number">1</span>]
-<span class="hljs-comment">#输出 Bosh</span>
+<p>我们插入了数据 然后讲一下获取数据</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> sqlite3.connect(db_filename) <span class="hljs-keyword">as</span> conn:
+    c = conn.cursor()
+    c.execute(<span class="hljs-string">'select * from user'</span>);
+    values = c.fetchall()
+    value = c.fetchone()
+    values2 = c.fetchmany(<span class="hljs-number">5</span>)
+    <span class="hljs-comment">#可以获得不同长度的记录</span>
 </code></pre>
-<p>增删改</p>
-<pre><code class="lang-python"><span class="hljs-comment">#末尾增加一个</span>
-players.append(<span class="hljs-string">'Ray Allen'</span>)
-<span class="hljs-comment">#['James', 'Wade', 'Bosh', 'Ray Allen']</span>
-
-<span class="hljs-comment">#指定位置增加一个</span>
-players.insert(<span class="hljs-number">1</span>, <span class="hljs-string">'Jones'</span>)
-<span class="hljs-comment">#['James', 'Jonens', Wade', 'Bosh', 'Ray Allen']</span>
-
-
-
-<span class="hljs-comment">#删除一个元素</span>
-players.pop()
-<span class="hljs-comment">#['James', 'Jonens', Wade', 'Bosh']</span>
-players.pop(<span class="hljs-number">2</span>)
-<span class="hljs-comment">#['James', 'Jonens', 'Bosh']</span>
-
-<span class="hljs-comment">#修改一个元素</span>
-players[<span class="hljs-number">2</span>] = <span class="hljs-string">'Chris Bosh'</span>
-<span class="hljs-comment">#['James', 'Jonens', 'Chris Bosh']</span>
-
-<span class="hljs-comment">#末尾增加另外一个列表</span>
-players.extend([<span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Cole'</span>])
-<span class="hljs-comment">#['James', 'Jonens', 'Chris Bosh', 'Wade', 'Cole']</span>
-</code></pre>
-<p>判断一个元素是不是List对象</p>
-<pre><code class="lang-python">isinstance(players, list)
-<span class="hljs-comment">#输出True</span>
-</code></pre>
-<p>用js把上面的方法都写一遍...有的地方确实蛋疼啊</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> players = [<span class="hljs-string">'James'</span>, <span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Bosh'</span>];
-console.log(players.length);
-console.log(players[<span class="hljs-number">1</span>]);
-<span class="hljs-comment">//不支持负数index</span>
-
-players.push(<span class="hljs-string">'Ray Allen'</span>);
-<span class="hljs-comment">//['James', 'Wade', 'Bosh', 'Ray Allen'];</span>
-
-players.splice(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"Jones"</span>);
-<span class="hljs-comment">//['James', 'Jonens', Wade', 'Bosh', 'Ray Allen'];</span>
-<span class="hljs-comment">//神奇的方法啊，牛逼的splice，当然这是反话</span>
-
-players.pop();
-<span class="hljs-comment">//['James', 'Jonens', Wade', 'Bosh']</span>
-
-players.splice(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
-<span class="hljs-comment">//['James', 'Jonens', 'Bosh']</span>
-<span class="hljs-comment">//splice又来了，真是厉害..</span>
-
-players[<span class="hljs-number">2</span>] = <span class="hljs-string">'Chris Bosh'</span>;
-<span class="hljs-comment">//['James', 'Jonens', 'Chris Bosh']</span>
-
-players = players.concat([<span class="hljs-string">'Wade'</span>, <span class="hljs-string">'Cole'</span>]);
-<span class="hljs-comment">//['James', 'Jonens', 'Chris Bosh', 'Wade', 'Cole']</span>
-
-<span class="hljs-comment">//前方高能 判断一个变量是不是数组 要用这么多奇葩的方法 呵呵</span>
-players <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>;
-<span class="hljs-comment">//True</span>
-
-<span class="hljs-comment">//tricky的傻逼方法</span>
-<span class="hljs-built_in">Object</span>.prototype.toString.call(players) == <span class="hljs-string">'[object Array]'</span>;
-<span class="hljs-comment">//true</span>
-
-<span class="hljs-comment">//es5标准方法 当然还要浏览器大神的支持</span>
-<span class="hljs-built_in">Array</span>.isArray(players);
-<span class="hljs-comment">//true</span>
-</code></pre>
-<p>好吧 我爱python 下节讲讲数组的循环</p>
 
                     
                     </section>
@@ -387,8 +346,10 @@ players <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in"
         </div>
 
         
+        <a href="../OOP/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
         
-        <a href="../List/loop.html" class="navigation navigation-next navigation-unique"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="../Util/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
