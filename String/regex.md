@@ -70,4 +70,48 @@ print result
 ```
 
 ### 贪婪和非贪婪
+现在有一段html文本 "<a>some nice dudes</a> test some data haha" 我想匹配这里面你的html tag，我们来写一个正则 <.*> 但是你会发现匹配到了"<a>some nice dudes</a>" 怎么样让正则遇到一个符合条件的停下 不继续往下面匹配呢？ 很简单 不让正则贪婪 只要前面加一个问号就好了 写成这样 <.*?> 
+```python
+text = "<a>some nice dudes</a>"
+result = re.findall(r'<.*?>')
+print result
+# ['<a>', '</a>']
+```
 
+### 替换
+直接看代码吧
+```python
+text = "<a> some nice dudes</a>"
+result = re.sub('<.*?>', '', text)
+print result
+# "some nice dudes"
+```
+
+##javascript版本代码
+javascript 有比较多的正则方法 
+Regex对象下有 exec 和 test 方法
+String对象下有 match search 和 replace
+如果你先检验一个字符串符合不符合一个正则 可以用test和search方法
+如果你想返回一些符合特点样式的结果 你可以使用 exec 和match方法 注意exec只能返回一个结果 而match可以返回多个
+如果是多个group结果 要使用exec方法
+如果你想替换 使用replace方法
+```javascript
+var a = 'viking';
+var pa = /vik/g;
+pa.test(a);
+//true
+a.search(pa)
+//0 如果找不到返回-1
+a = "me@gmail.com abcd you@me.com";
+pa = /\w+@[\w.]+/g;
+a.match(pa);
+// ['me@gmail.com', 'you@me.com']
+pa.exec(a);
+// ['me@gmail.com'] 只返回第一个
+pa = /(\w+)@([\w.]+)/;
+pa.exec(a);
+// ['me@gmail.com', 'me', 'gmail.com']
+
+//如果想要分组加findall的情况怎么办？
+
+```
