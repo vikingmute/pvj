@@ -28,4 +28,13 @@ for (var i = 0; i < players.length; i++) {
     console.log(i + ':' + players[i]);    
 }
 
+//我们一直都说不要用for in来循环数组 为啥呢
+//请看下面的链接 http://stackoverflow.com/questions/500504/why-is-using-for-in-with-array-iteration-such-a-bad-idea
+//最主要的原因是原型链被污染的时候 上面的东西都会被搞出来 还有就是顺序会出问题
+
+//es6里面可以用for of方法来直接循环出数组的值 而不是索引 类似python
+
+for (var player of players) {
+    console.log(player);
+}
 ```
