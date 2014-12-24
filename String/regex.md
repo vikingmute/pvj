@@ -112,6 +112,25 @@ pa = /(\w+)@([\w.]+)/;
 pa.exec(a);
 // ['me@gmail.com', 'me', 'gmail.com']
 
+//替换内容
+var a = "<a>this is cool</a>";
+var pa = /<.*?>/g;
+var b = pa.replace(pa, '');
+console.log(b);
+// "this is cool"
 //如果想要分组加findall的情况怎么办？
+//我们可以使用while方法
+var b = "me@gmail.com abc abc@me.com xyz adf@out.com";
+pa = /(\w+)@([\w.]+)/g;
+var farr = [];
+var result = pa.exec(b);
+farr.push(result);
+if (while result != null) {
+	result = pa.exec(b);
+	farr.push(result);
+}
+farr.pop();
+console.log(farr);
+//[["me@gmail.com", "me", "gmail.com"], ["abc@me.com", "abc", "me.com"], ["adf@out.com", "adf", "out.com"]]
 
 ```
